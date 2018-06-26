@@ -9,12 +9,23 @@
   <link rel="stylesheet" href="homepage.css">
 </head>
 
-<body>
+<body onload="javascripg:console.log('onload');">
+  <script>
+    var head = document.getElementsByTagName('head')[0];
+    console.log('head tag');
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'test.js';
+    head.appendChild(script);
+  </script>
   <header>
     <div class="container">
-      
+      <script>
+        console.log('nav loading');
+      </script>
+
       <img class="logo" src="logo.png" alt="less.logo">
-      
+
       <nav>
         <ul>
           <li>
@@ -33,6 +44,9 @@
       </nav>
     </div>
   </header>
+  <script>
+    console.log('body finished');
+  </script>
 </body>
 
 </html>
