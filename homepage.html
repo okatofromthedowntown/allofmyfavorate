@@ -14,6 +14,7 @@
     var head = document.getElementsByTagName('head')[0];
     console.log('head tag');
     var script = document.createElement('script');
+    console.log('isDefer: ' + script.defer + ' isAsync:' + script.async);
     script.type = 'text/javascript';
     script.src = 'test.js';
     head.appendChild(script);
@@ -46,6 +47,12 @@
   </header>
   <script>
     console.log('body finished');
+    for(let i=0;i<120000;i++){
+      console.log('loop');
+    }
+  </script>
+  <script>
+  console.log('where am i ');
   </script>
 </body>
 
