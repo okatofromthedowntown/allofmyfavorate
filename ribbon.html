@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  body {
+    background-color: #f1e2e2;
+  }
+
+  .ribbon {
+    width: 200px;
+    margin: 50px auto;
+    padding: 7px 0;
+    background-color: #90ee90;
+    position: relative;
+  }
+
+  .ribbon::before, .ribbon::after {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-width: 18px;
+    border-style: solid;
+    bottom: -16px;
+    z-index: -1;
+  }
+
+  .ribbon::before {
+    left: -20px;
+    border-color: #62ac62 #62ac62 #62ac62 transparent;
+  }
+
+  .ribbon::after {
+    right: -20px;
+    border-color: #62ac62 transparent #62ac62 #62ac62;
+  }
+
+  .ribbon-text {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    font-family: sans-serif;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .ribbon-text::before, .ribbon-text::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px;
+    /* top: 100%; */
+    position: absolute;
+    bottom: -23px;
+  }
+
+  .ribbon-text::before {
+    left: 0;
+    border-color: #006400 #006400 transparent transparent;
+  }
+
+  .ribbon-text::after {
+    right: 0;
+    border-color: #006400 transparent transparent #006400;
+  }
+
+  .arrow-msg {
+    width: 300px;
+    margin: 50px auto;
+    padding: 25px 0;
+    border-radius: 8px;
+    background-color: red;
+    position: relative;
+  }
+
+  .arrow-msg::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 14px;
+    border-color: red transparent transparent transparent;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  p {
+    text-align: center;
+  }
+  </style>  
+</head>
+<body>
+  <div class="ribbon"><span class="ribbon-text">Hi, I'm Ribbon</span></div>
+
+  <div class="arrow-msg"><p>Hey, You're Welcome</p></div>
+</body>
+</html>
