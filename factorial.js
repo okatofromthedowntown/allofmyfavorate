@@ -3,8 +3,12 @@ const factorial = (n, accumulation = 1) => {
     return accumulation;
   }
   return factorial(n - 1, n * accumulation); 
-}
-
-console.log(factorial(3));
-console.log(factorial(4));
-console.log(factorial(5));
+};
+const factorial_normal = n => {
+  if (n < 2) {
+    return 1;
+  }
+  return n * factorial_normal(n - 1)
+};
+console.log(factorial(8955)); // RangeError: Maximum call stack size exceeded
+console.log(factorial_normal(8960)); // Infinity
