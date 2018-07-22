@@ -1,0 +1,30 @@
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 13px;
+}
+
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  margin: 10px;
+  flex: 1;
+}
+
+@media (min-width: 600px) {
+  .Site-content {
+    display: flex;
+    flex-direction: row;
+  }
+  .content {
+    flex: 1;
+  }
+}
