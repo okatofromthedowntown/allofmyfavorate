@@ -52,8 +52,8 @@
       ctx.fillStyle = 'lime'; // draw the snack
       for (let i = 0; i < trail.length; i++) { // trail redraw full-loops
         ctx.fillRect(trail[i].x * gs, trail[i].y * gs, gs - 2, gs - 2);
-        if (trail[i].x == px && trail[i].y == py) {
-          tail = 5;
+        if (trail[i].x == px && trail[i].y == py) { // when bite snackself
+          tail = 5; // restart
         }
       }
       trail.push({ x: px, y: py }); // next step
