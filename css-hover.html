@@ -50,7 +50,10 @@
     opacity: 0;
     z-index: 1;
   }
-  .container .box:hover::before,
+  .container .box:hover::before {
+    transform: scaleX(1);
+    opacity: 1;
+  }
   .container .box:hover::after {
     transform: scaleY(1);
     opacity: 1;
