@@ -5,8 +5,6 @@
   right: 10px
   left: 10px
   bottom: 10px
-  border-top: 1px solid #fff
-  border-bottom: 1px solid #fff
   box-sizing: border-box
   z-index: 1
 
@@ -74,11 +72,15 @@ body
       &::before
           @include pesudo-style
           @include pesudo-anime(.5s, x, 0)
+          border-top: 1px solid #fff
+          border-bottom: 1px solid #fff
           opacity: 0
 
       &::after
         @include pesudo-style
         @include pesudo-anime(.5s, y, 0)
+        border-left: 1px solid #fff
+        border-right: 1px solid #fff
         opacity: 0
 
       &:hover::before
@@ -92,7 +94,7 @@ body
       &:hover 
         .img img
           opacity: .35
-          transform: (1.1)
+          transform: scale(1.1)
         
         .content
           h2, p
