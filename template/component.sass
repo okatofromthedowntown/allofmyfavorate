@@ -1,0 +1,102 @@
+@mixin pesudo-style
+  content: ''
+  position: absolute
+  top: 10px
+  right: 10px
+  left: 10px
+  bottom: 10px
+  border-top: 1px solid #fff
+  border-bottom: 1px solid #fff
+  box-sizing: border-box
+  z-index: 1
+
+@mixin pesudo-anime($time, $scale, $val)
+  transition: $time
+  @if $scale == x
+    transform: scaleX($val)
+  @else
+    transform: scaleY($val)
+
+*
+  margin: 0
+  padding: 0
+
+body
+  font-family: sans-serif
+  background: #212121
+
+  .container
+    .box
+      position: relative
+      background: #000
+      width: 400px
+      height: 300px
+      margin: 20px auto
+      box-sizing: border-box
+      overflow: hidden
+      box-shadow: 0 5px 10px rgba(0, 0, 0, .8)
+
+      .content
+        position: absolute
+        width:  100%
+        top: 50%
+        transform: translateY(-50%)
+        z-index: 2
+        padding: 20px
+        box-sizing: border-box
+        text-align: center
+
+        h2
+          margin: 0 0 10px
+          padding: 0
+          color: #fff
+          transition: .5s
+          transform: translateY(-50px)
+          opacity: 0
+          visibility: hidden
+        
+        p
+          margin: 0
+          padding: 0
+          color: #fff
+          transition: .5s
+          transform: translateY(50px)
+          opacity: 0
+          visibility: hidden
+
+      .img
+        position: relative
+
+        img
+          width: 100%
+          transition: .5s
+
+      &::before
+          @include pesudo-style
+          @include pesudo-anime(.5s, x, 0)
+          opacity: 0
+
+      &::after
+        @include pesudo-style
+        @include pesudo-anime(.5s, y, 0)
+        opacity: 0
+
+      &:hover::before
+        transform: scaleX(1)
+        opacity: 1
+      
+      &:hover::after
+        transform: scaleY(1)
+        opacity: 1
+
+      &:hover 
+        .img img
+          opacity: .35
+          transform: (1.1)
+        
+        .content
+          h2, p
+            opacity: 1
+            visibility: visible
+            transform: translateY(0)
+            transition-delay: .2s

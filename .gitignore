@@ -1,1 +1,3 @@
 .vscode
+/template/*.map
+/template/compont.css
