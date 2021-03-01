@@ -1,3 +1,4 @@
 .vscode
 /template/*.map
 /template/compont.css
+.DS_Store
