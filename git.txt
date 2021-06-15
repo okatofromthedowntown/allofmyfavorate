@@ -1,0 +1,77 @@
+git config --global core.editor vim
+
+.gitignore
+# no .a files
+*.a
+# but do track lib.a, even though you're ignoring .a files above
+!lib.a
+# only ignore the TODO file in the current directory, not subdir/TODO
+/TODO
+# ignore all files in the build/ directory
+build/
+# ignore doc/notes.txt, but not doc/server/arch.txt
+doc/*.txt
+# ignore all .pdf files in the doc/ directory
+doc/**/*.pdf
+
+git diff
+git diff --staged
+git difftool --tool-help
+
+git rm --staged README.md
+git rm log/\*.md
+git mv file_from file_to
+
+git config --global alias.graph 'log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all'
+
+git commit --amend
+git checkout -- README.md
+
+git remote -v
+git remote add <short-name> <url>
+git remote rename name_from name_to
+git remote rm <short-name>
+
+git fetch <remote-name>
+git push <remote-name> <branch-name>
+
+git tag -l "v1.0.*"
+git tag -a v1.2 <hash>
+git push origin v1.2
+git push origin --tags
+git tag -d v1.2
+git push origin :refs/tags/v1.2
+git checkout -b branch-tag-1.2 v1.2
+
+git merge iss11
+git status
+git add 
+git commit
+
+git branch -a
+git branch -v
+git branch --merged
+git branch --no-merged
+git branch -d <branch-name>
+git brahcn -D <branch-name>
+git push origin --delete <branch-name> 
+
+git push origin <branch-from>:<branch-to>
+
+git fetch --all
+git branch -vv
+
+# rebase client with master but leave the server branch with normal
+git rebase --onto master server client
+
+git pull --rebase
+git rebase <base-branch> <topic-branch>
+git checkout <base-branc>
+git merge <topic-branch>
+
+# Local protocol
+git clone /opt/git/project.git
+git clone file:///opt/git/progect.git
+git remote add local_proj /opt/git/project.git
+
+# 
