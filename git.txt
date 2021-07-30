@@ -70,6 +70,7 @@ git pull --rebase
 git rebase <base-branch> <topic-branch>
 git checkout <base-branc>
 git merge <topic-branch>
+git merge -X <ours/theirs> <topic-branch>
 
 # Local protocol
 git clone /opt/git/project.git
