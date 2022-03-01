@@ -6,7 +6,7 @@ import subprocess
 import glob
 import shutil
 
-def main(argv):
+def maven2Local(argv):
     project_dir = os.path.dirname(os.path.realpath(__file__))
     repo_dir = os.path.join(project_dir, "android-tooling-repo")
     temp_home = os.path.join(project_dir, ".gradle_home")
@@ -41,4 +41,4 @@ def main(argv):
     return 0
 
 if __name__ == "__main__":
-    sys.exit(main(sys.argv))
+    sys.exit(maven2Local(sys.argv))
