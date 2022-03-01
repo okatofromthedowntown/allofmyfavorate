@@ -6,6 +6,7 @@ import subprocess
 import glob
 import shutil
 
+# same to ./gradlew publishToMavenLocal
 def maven2Local(argv):
     project_dir = os.path.dirname(os.path.realpath(__file__))
     repo_dir = os.path.join(project_dir, "android-tooling-repo")
